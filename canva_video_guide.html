@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hướng dẫn tạo video Canva – Portfolio Nguyễn Mạnh Duy</title>
+<style>
+    :root {
+        --navy: #1a1a2e;
+        --accent: #667eea;
+        --accent2: #764ba2;
+        --green: #2ecc71;
+        --red: #e74c3c;
+        --orange: #e67e22;
+        --bg: #f5f7fa;
+        --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: #333; }
+
+    header {
+        background: linear-gradient(135deg, var(--navy), #0f3460);
+        color: #fff; padding: 40px 48px 32px;
+    }
+    header h1 { font-size: 28px; font-weight: 800; letter-spacing: 1px; }
+    header p { margin-top: 8px; color: #aab4d6; font-size: 14px; }
+
+    .steps-bar {
+        background: var(--navy);
+        padding: 0 48px;
+        display: flex; gap: 0; overflow-x: auto;
+    }
+    .step-tab {
+        color: #aab4d6; font-size: 12px; font-weight: 700;
+        padding: 14px 20px; white-space: nowrap; letter-spacing: 1px;
+        border-bottom: 3px solid transparent;
+    }
+    .step-tab.done { color: var(--green); border-color: var(--green); }
+
+    .content { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ===== setup ===== */
+    .setup-box {
+        background: var(--card); border-radius: 14px; padding: 28px 32px;
+        box-shadow: 0 2px 12px rgba(0,0,0,.07); margin-bottom: 32px;
+    }
+    .setup-box h2 { font-size: 18px; color: var(--navy); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .setup-steps { list-style: none; }
+    .setup-steps li { display: flex; gap: 14px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; line-height: 1.6; }
+    .setup-steps li:last-child { border-bottom: none; }
+    .num { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; background: linear-gradient(135deg,var(--accent),var(--accent2)); color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    /* ===== slide cards ===== */
+    .slides-title { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+    .slide-card {
+        background: var(--card); border-radius: 16px; padding: 0;
+        box-shadow: 0 2px 14px rgba(0,0,0,.07); margin-bottom: 24px; overflow: hidden;
+    }
+    .slide-header {
+        background: linear-gradient(135deg, var(--navy), #0f3460);
+        padding: 18px 28px; display: flex; align-items: center; gap: 16px;
+    }
+    .slide-num {
+        width: 44px; height: 44px; min-width: 44px; border-radius: 50%;
+        background: rgba(255,255,255,.15); color: #fff; font-weight: 900; font-size: 18px;
+        display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,.3);
+    }
+    .slide-header-text h3 { color: #fff; font-size: 16px; font-weight: 700; }
+    .slide-header-text span { color: #aab4d6; font-size: 12px; letter-spacing: 1px; }
+    .slide-body { padding: 24px 28px; }
+    .slide-body h4 { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #999; margin-bottom: 10px; margin-top: 18px; }
+    .slide-body h4:first-child { margin-top: 0; }
+
+    .copy-box {
+        background: #1a1a2e; color: #e8eeff; border-radius: 10px; padding: 16px 18px;
+        font-size: 13.5px; line-height: 1.8; position: relative; margin-bottom: 4px;
+    }
+    .copy-box .main { font-size: 22px; font-weight: 900; color: #fff; letter-spacing: 2px; display: block; margin-bottom: 6px; }
+    .copy-box .sub { color: #aab4d6; font-size: 12px; letter-spacing: 2px; display: block; }
+    .copy-box .body-text { font-size: 13px; color: #c8d0ea; line-height: 1.8; }
+    .copy-btn {
+        position: absolute; top: 12px; right: 12px; background: rgba(102,126,234,.2);
+        border: 1px solid rgba(102,126,234,.4); color: #aab4d6; font-size: 11px; padding: 4px 10px;
+        border-radius: 8px; cursor: pointer; font-family: inherit;
+    }
+    .copy-btn:hover { background: rgba(102,126,234,.35); color: #fff; }
+
+    .design-tip {
+        background: #fff8e1; border-left: 4px solid #f39c12; border-radius: 0 8px 8px 0;
+        padding: 12px 16px; font-size: 13px; color: #7d5c00; margin-top: 8px; line-height: 1.6;
+    }
+    .design-tip strong { color: #e67e22; }
+
+    .el-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+    .el-tag { padding: 5px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+    .el-tag.bg { background: rgba(102,126,234,.12); color: var(--accent); border: 1px solid rgba(102,126,234,.3); }
+    .el-tag.tx { background: rgba(46,204,113,.12); color: #27ae60; border: 1px solid rgba(46,204,113,.3); }
+    .el-tag.ic { background: rgba(231,76,60,.1); color: var(--red); border: 1px solid rgba(231,76,60,.25); }
+    .el-tag.an { background: rgba(118,75,162,.1); color: var(--accent2); border: 1px solid rgba(118,75,162,.3); }
+
+    .timing-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+    .timing-badge { background: linear-gradient(135deg,var(--accent),var(--accent2)); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    .transition-badge { background: rgba(0,0,0,.06); color: #555; padding: 5px 12px; border-radius: 20px; font-size: 12px; }
+
+    /* ===== outro ===== */
+    .export-box { background: linear-gradient(135deg,var(--navy),#0f3460); border-radius: 16px; padding: 32px; color: #fff; margin-top: 36px; }
+    .export-box h2 { font-size: 20px; margin-bottom: 20px; }
+    .export-steps { list-style: none; }
+    .export-steps li { display: flex; gap: 14px; align-items: flex-start; padding: 10px 0; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .export-steps li:last-child { border-bottom: none; }
+    .export-steps .num { background: rgba(255,255,255,.15); min-width: 28px; }
+    .music-tip { margin-top: 20px; background: rgba(255,255,255,.07); border-radius: 10px; padding: 16px 18px; font-size: 13px; color: #c8d0ea; line-height: 1.8; }
+    .music-tip strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🎬 Hướng dẫn tạo Video Portfolio trên Canva</h1>
+    <p>Nguyễn Mạnh Duy · Portfolio Học Tập 2025–2026 · 15 slide · ~2 phút</p>
+</header>
+
+<div class="steps-bar">
+    <div class="step-tab">① Thiết lập Canva</div>
+    <div class="step-tab">② Copy nội dung từng slide</div>
+    <div class="step-tab">③ Thêm ảnh minh chứng</div>
+    <div class="step-tab">④ Chọn nhạc nền</div>
+    <div class="step-tab">⑤ Xuất MP4</div>
+</div>
+
+<div class="content">
+
+    <!-- Setup -->
+    <div class="setup-box" style="margin-top:32px;">
+        <h2>⚙️ Bước 1 — Thiết lập dự án Canva</h2>
+        <ul class="setup-steps">
+            <li><div class="num">1</div><div>Vào <strong>canva.com</strong> → Tạo thiết kế → chọn <strong>"Video"</strong> (tỷ lệ 16:9 — 1920×1080px). Không dùng Presentation vì không xuất được MP4 có nhạc.</div></li>
+            <li><div class="num">2</div><div>Chọn màu nền chủ đạo: <strong>#1a1a2e</strong> (xanh navy đậm) — khớp với theme portfolio. Áp dụng cho tất cả slide.</div></li>
+            <li><div class="num">3</div><div>Font chữ: <strong>Tiêu đề</strong> → "Montserrat Bold" hoặc "Bebas Neue". <strong>Nội dung</strong> → "Nunito" hoặc "Poppins Regular".</div></li>
+            <li><div class="num">4</div><div>Tạo <strong>15 trang</strong> (15 slide). Copy nội dung bên dưới vào từng trang theo thứ tự.</div></li>
+            <li><div class="num">5</div><div>Để slide 9–14 (phần Project) trống màu nền trước, sẽ thêm ảnh minh chứng của bạn vào sau.</div></li>
+        </ul>
+    </div>
+
+    <div class="slides-title">📋 Nội dung 15 Slide</div>
+
+    <!-- SLIDE 1 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">1</div>
+            <div class="slide-header-text">
+                <h3>🖥️ Terminal Boot — Mở đầu</h3>
+                <span>THỜI LƯỢNG: 5 GIÂY · HIỆU ỨNG: FADE IN</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="body-text" style="font-family:monospace; color:#2ecc71;">
+                    &gt; Loading portfolio: Nguyễn Mạnh Duy...<br>
+                    &gt; Initializing modules: INTRODUCTION | PROJECT | SUMMARY...<br>
+                    &gt; Ready. Starting presentation.
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Dùng textbox font "Courier New" màu xanh lá <strong>#2ecc71</strong>, nền đen <strong>#0a0a0a</strong>. Thêm animation "Typewriter" cho từng dòng, delay 0.5s — 1s — 1.5s.</div>
+            <h4>Elements cần thêm</h4>
+            <div class="el-row">
+                <span class="el-tag bg">Background: #0a0a0a</span>
+                <span class="el-tag tx">Text màu #2ecc71</span>
+                <span class="el-tag an">Anim: Typewriter</span>
+            </div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 5 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">2</div>
+            <div class="slide-header-text">
+                <h3>👤 Hero — Tên & Danh tính</h3>
+                <span>THỜI LƯỢNG: 8 GIÂY · HIỆU ỨNG: RISE IN</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">PORTFOLIO HỌC TẬP · 2025–2026</span>
+                <span class="main">NGUYỄN MẠNH DUY</span>
+                <span class="body-text">Sinh viên năm nhất ngành Data Science<br>Đại học Công nghệ · ĐHQG Hà Nội · MSSV: 25024086</span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Tên viết hoa, gradient text từ <strong>#ffffff</strong> → <strong>#667eea</strong> → <strong>#764ba2</strong>. Thêm ảnh đại diện của bạn (dạng tròn) bên phải hoặc phía trên tên. Animation "Fade Up" delay 0.3s cho từng dòng.</div>
+            <h4>Elements</h4>
+            <div class="el-row">
+                <span class="el-tag bg">Gradient bg: #1a1a2e → #0f3460</span>
+                <span class="el-tag ic">📸 Ảnh avatar tròn</span>
+                <span class="el-tag an">Anim: Fade Up</span>
+            </div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 8 giây</div>
+                <div class="transition-badge">Chuyển: Slide Left</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">3</div>
+            <div class="slide-header-text">
+                <h3>🏷️ Skill Chips — Năng lực</h3>
+                <span>THỜI LƯỢNG: 6 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">KỸ NĂNG & NĂNG LỰC</span><br><br>
+                <span class="body-text">
+                    📊 Phân tích dữ liệu &nbsp;&nbsp; 🐍 Python cơ bản &nbsp;&nbsp; 🤖 Prompt Engineering<br><br>
+                    🌐 HTML / CSS &nbsp;&nbsp; 📈 Google Sheets · Forms &nbsp;&nbsp; 🎨 Canva AI · Dreamina AI
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Mỗi kỹ năng làm 1 "pill" (hình chữ nhật bo góc). Nền pill: <strong>rgba(102,126,234,0.15)</strong>, viền <strong>#667eea</strong>. Các pill bay vào từng cái với animation "Pop" delay tăng dần 0.2s mỗi pill.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 6 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">4</div>
+            <div class="slide-header-text">
+                <h3>📖 Introduction — Giới thiệu bản thân</h3>
+                <span>THỜI LƯỢNG: 8 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">📖 INTRODUCTION</span>
+                <span class="main" style="font-size:18px;">GIỚI THIỆU BẢN THÂN</span>
+                <span class="body-text">
+                    "Tôi là sinh viên năm nhất ngành Khoa học Dữ liệu, yêu thích<br>
+                    khám phá ý nghĩa ẩn sau những con số và áp dụng AI vào<br>
+                    học tập một cách có trách nhiệm."<br><br>
+                    ✦ Trường: Đại học Công nghệ, ĐHQGHN<br>
+                    ✦ Ngành: Data Science · Năm 1<br>
+                    ✦ MSSV: 25024086
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Thêm ảnh đại diện tròn góc trái, phần text bên phải. Dùng icon 📊🐍🤖 nhỏ trang trí góc. Nền có lớp grid mờ (chụp màn hình grid.png từ file HTML hoặc tìm "tech grid" trong Elements Canva).</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 8 giây</div>
+                <div class="transition-badge">Chuyển: Slide Left</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">5</div>
+            <div class="slide-header-text">
+                <h3>🎯 Mục tiêu Portfolio</h3>
+                <span>THỜI LƯỢNG: 7 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">MỤC TIÊU CỦA PORTFOLIO NÀY</span><br><br>
+                <span class="body-text">
+                    ✅ Ghi lại hành trình học tập qua 6 nhiệm vụ thực tế<br>
+                    ✅ Thể hiện kỹ năng số và tư duy phản biện có hệ thống<br>
+                    ✅ Lưu trữ & chia sẻ sản phẩm cá nhân một cách chuyên nghiệp<br>
+                    ✅ Tích hợp đa công cụ AI (Gemini, Dreamina, Canva) vào quy trình
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Mỗi dòng ✅ là 1 textbox riêng, bay vào theo thứ tự với animation "Fade Up" delay 0.4s mỗi dòng — tạo hiệu ứng checklist xuất hiện dần.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 7 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">6</div>
+            <div class="slide-header-text">
+                <h3>🗂️ Project — Tổng quan 6 bài</h3>
+                <span>THỜI LƯỢNG: 8 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">🗂️ PROJECT · 6 BÀI TẬP THỰC HÀNH</span><br><br>
+                <span class="body-text">
+                    🎯 Bài 1: Thao tác với thư mục và tệp tin cơ bản<br>
+                    🔍 Bài 2: Tìm Kiếm &amp; Đánh Giá Thông Tin Học Thuật<br>
+                    🤖 Bài 3: Trải Nghiệm &amp; Đánh Giá Công Cụ Trợ Lý AI<br>
+                    🚀 Bài 4: Thiết Kế Quy Trình Hợp Tác Trực Tuyến Nâng Cao<br>
+                    🤖 Bài 5: Quy Trình Sáng Tạo Nội Dung Số Với AI<br>
+                    🚀 Bài 6: Xây Dựng Khung Nguyên Tắc AI Có Trách Nhiệm
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Làm grid 2×3 hoặc list 6 dòng. Mỗi bài là 1 card nhỏ có viền, icon emoji lớn bên trái. Dùng animation "Cascade" hoặc từng card pop vào 0.3s mỗi cái.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 8 giây</div>
+                <div class="transition-badge">Chuyển: Slide Left</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">7</div>
+            <div class="slide-header-text">
+                <h3>🎯 Bài 1 — Quản lý tệp & thư mục</h3>
+                <span>THỜI LƯỢNG: 7 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">BÀI 1 · QUẢN LÝ TỆP &amp; THƯ MỤC</span>
+                <span class="body-text">
+                    Mục đích: Thiết kế cấu trúc web chuẩn hóa, quy tắc đặt tên nhất quán<br>
+                    và quản lý phiên bản tệp tin khoa học.<br><br>
+                    ✦ Cấu trúc 3 cấp thư mục rõ ràng<br>
+                    ✦ Quy tắc đặt tên: chữ thường, gạch ngang, không dấu<br>
+                    ✦ Triết lý: "Tổ chức hôm nay tiết kiệm giờ tìm kiếm ngày mai"
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Thêm ảnh <strong>bai11.png / bai12.png</strong> từ portfolio của bạn vào bên phải slide (ảnh chụp màn hình thư mục). Bo góc 12px, đổ bóng nhẹ.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 7 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">8</div>
+            <div class="slide-header-text">
+                <h3>🔍 Bài 2 — Tìm kiếm thông tin học thuật</h3>
+                <span>THỜI LƯỢNG: 7 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">BÀI 2 · TÌM KIẾM &amp; ĐÁNH GIÁ THÔNG TIN</span>
+                <span class="body-text">
+                    Sử dụng thành thạo 5 toán tử tìm kiếm nâng cao:<br><br>
+                    intitle: &nbsp; · &nbsp; site: &nbsp; · &nbsp; filetype: &nbsp; · &nbsp; AND/OR &nbsp; · &nbsp; source:<br><br>
+                    ✦ Đánh giá độ tin cậy nguồn theo CRAAP Test<br>
+                    ✦ Phân tích chiến lược tìm kiếm chuyên sâu
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Thêm ảnh <strong>bai21a.png / bai21b.png</strong>. Các toán tử (intitle, site...) làm pill badge màu xanh nổi bật để giám khảo chú ý.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 7 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">9</div>
+            <div class="slide-header-text">
+                <h3>🤖 Bài 3 — Đánh giá công cụ trợ lý AI</h3>
+                <span>THỜI LƯỢNG: 7 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">BÀI 3 · TRẢI NGHIỆM CÔNG CỤ TRỢ LÝ AI</span>
+                <span class="body-text">
+                    So sánh Prompt cơ bản vs Prompt cải tiến:<br><br>
+                    PROMPT CƠ BẢN &nbsp; → &nbsp; PROMPT CẢI TIẾN &nbsp; → &nbsp; PHÂN TÍCH SÂU<br><br>
+                    ✦ Áp dụng kỹ thuật Role-play & Chain-of-Thought<br>
+                    ✦ Phân tích cơ chế Attention Mechanism của AI<br>
+                    ✦ Prompt Engineering đạt Mức 4 Rubric
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Thêm ảnh <strong>bai31.png / bai32.png / bai33.png</strong>. Làm mũi tên "→" giữa 3 giai đoạn, màu gradient tím-xanh.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 7 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">10</div>
+            <div class="slide-header-text">
+                <h3>🚀 Bài 4 — Hợp tác trực tuyến nâng cao</h3>
+                <span>THỜI LƯỢNG: 7 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">BÀI 4 · HỢP TÁC TRỰC TUYẾN NÂNG CAO</span>
+                <span class="body-text">
+                    Hệ sinh thái 4 công cụ số tích hợp — Nhóm 33:<br><br>
+                    📊 Trello &nbsp; · &nbsp; 📝 Google Docs &nbsp; · &nbsp; 💬 Zalo/Meet &nbsp; · &nbsp; 📂 Google Drive<br><br>
+                    ✦ Đề tài: "Ứng dụng AI trong lĩnh vực y tế và sự sống"<br>
+                    ✦ Giải pháp xóa bỏ điểm nghẽn & tối ưu hiệu suất nhóm
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Thêm ảnh <strong>bai41.png / bai42.png</strong>. Logo 4 công cụ (Trello, Docs, Zalo, Drive) xếp hàng ngang có mũi tên kết nối.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 7 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">11</div>
+            <div class="slide-header-text">
+                <h3>✨ Bài 5 — Sáng tạo nội dung với AI (ĐIỂM NỔI BẬT)</h3>
+                <span>THỜI LƯỢNG: 9 GIÂY — SLIDE QUAN TRỌNG NHẤT</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">BÀI 5 · SÁNG TẠO NỘI DUNG SỐ VỚI AI</span>
+                <span class="body-text">
+                    Quy trình 3 giai đoạn tích hợp AI chuyên nghiệp:<br><br>
+                    🤖 GEMINI AI &nbsp; → &nbsp; 🎨 DREAMINA AI &nbsp; → &nbsp; 🖥️ CANVA AI<br>
+                    Kịch bản & nội dung &nbsp;&nbsp; Hình ảnh minh họa &nbsp;&nbsp; Thiết kế hoàn thiện<br><br>
+                    ✦ Sản xuất nội dung truyền thông chuyên nghiệp<br>
+                    ✦ Tận dụng tối đa hệ sinh thái 3 công cụ AI
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Đây là slide ấn tượng nhất! Thêm ảnh <strong>bai52.png / bai56.png</strong> (sản phẩm Dreamina + Canva). Làm flowchart 3 bước với mũi tên lớn, mỗi bước 1 màu: tím → cam → xanh lá. Animation "Wipe" theo chiều trái sang phải.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 9 giây</div>
+                <div class="transition-badge">Chuyển: Slide Up</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 12 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">12</div>
+            <div class="slide-header-text">
+                <h3>🛡️ Bài 6 — AI có trách nhiệm</h3>
+                <span>THỜI LƯỢNG: 7 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">BÀI 6 · AI CÓ TRÁCH NHIỆM &amp; ĐẠO ĐỨC</span>
+                <span class="body-text">
+                    Bộ 7 Nguyên Tắc Sử Dụng AI Có Trách Nhiệm:<br><br>
+                    ① Minh bạch &nbsp; ② Không gian lận học thuật &nbsp; ③ Tôn trọng bản quyền<br>
+                    ④ Bảo vệ dữ liệu cá nhân &nbsp; ⑤ Kiểm chứng thông tin<br>
+                    ⑥ Phát triển tư duy độc lập &nbsp; ⑦ Sử dụng có chủ đích<br><br>
+                    ✦ Phân tích sâu 3 thách thức đạo đức AI trong học thuật
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> 7 nguyên tắc làm 7 icon nhỏ hình lục giác hoặc tròn xếp theo hexagon pattern. Nền tối, chữ trắng, viền tím gradient.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 7 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">13</div>
+            <div class="slide-header-text">
+                <h3>🏆 Summary — Bài học rút ra</h3>
+                <span>THỜI LƯỢNG: 8 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">🏆 SUMMARY · BÀI HỌC RÚT RA</span><br><br>
+                <span class="body-text">
+                    ✦ Kỹ năng số phải gắn liền với tư duy phản biện<br>
+                    ✦ Quy trình có hệ thống sẽ nhân thêm kết quả<br>
+                    ✦ Dữ liệu cần được kể thành câu chuyện có ý nghĩa<br>
+                    ✦ Đạo đức AI là nền tảng, không phải lựa chọn<br>
+                    ✦ Học qua làm — minh chứng quan trọng hơn lý thuyết
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Mỗi bài học 1 dòng, có icon nhỏ đầu dòng. Bay vào từng dòng với animation "Fade Up" delay 0.4s — giống checklist xuất hiện dần. Nền gradient tím sang xanh.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 8 giây</div>
+                <div class="transition-badge">Chuyển: Fade</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">14</div>
+            <div class="slide-header-text">
+                <h3>📊 Tự đánh giá Rubric</h3>
+                <span>THỜI LƯỢNG: 7 GIÂY</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="sub">TỰ ĐÁNH GIÁ THEO RUBRIC</span><br><br>
+                <span class="body-text">
+                    Thiết kế &amp; cấu trúc ████████████ 95%<br>
+                    Quản lý tệp &amp; thư mục ███████████ 90%<br>
+                    Tìm kiếm thông tin ██████████░ 85%<br>
+                    Viết Prompt hiệu quả ████████████ 92%<br>
+                    Hợp tác trực tuyến ████████████ 88%<br>
+                    Sáng tạo nội dung AI ████████████ 96%<br>
+                    AI có trách nhiệm ████████████ 91%
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Dùng "Progress bar" trong Elements Canva (tìm "progress bar"). Màu thanh bar: gradient <strong>#667eea → #764ba2</strong>. Animation "Wipe" từ trái sang để bar "điền vào" — rất ấn tượng!</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 7 giây</div>
+                <div class="transition-badge">Chuyển: Slide Up</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 15 -->
+    <div class="slide-card">
+        <div class="slide-header">
+            <div class="slide-num">15</div>
+            <div class="slide-header-text">
+                <h3>🎬 Outro — Kết thúc</h3>
+                <span>THỜI LƯỢNG: 6 GIÂY · FADE OUT</span>
+            </div>
+        </div>
+        <div class="slide-body">
+            <h4>Nội dung copy vào Canva</h4>
+            <div class="copy-box">
+                <span class="main">NGUYỄN MẠNH DUY</span>
+                <span class="sub">PORTFOLIO HỌC TẬP 2025–2026 · DATA SCIENCE · ĐHQGHN</span><br><br>
+                <span class="body-text" style="font-style:italic; font-size:14px; color:#aab4d6;">
+                    "Điều quan trọng không phải là bạn dùng AI giỏi đến đâu,<br>
+                    mà là bạn trở thành con người như thế nào khi có AI bên cạnh."
+                </span>
+            </div>
+            <div class="design-tip">💡 <strong>Canva tip:</strong> Thêm link GitHub hoặc URL portfolio nếu có. Logo nhỏ ĐHQGHN góc dưới phải. Animation "Fade" toàn slide, rồi dùng "Fade Out" ở cuối để video tắt dần sang đen.</div>
+            <div class="timing-row">
+                <div class="timing-badge">⏱ 6 giây · TỔNG: ~2 phút</div>
+                <div class="transition-badge">Fade to Black</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export -->
+    <div class="export-box">
+        <h2>📤 Bước cuối — Xuất video MP4</h2>
+        <ul class="export-steps">
+            <li><div class="num">1</div><div>Vào <strong>Chia sẻ</strong> (góc trên phải) → <strong>Tải xuống</strong> → Chọn định dạng <strong>MP4 (Video)</strong></div></li>
+            <li><div class="num">2</div><div>Chọn độ phân giải <strong>1080p</strong> (Full HD) để video sắc nét khi nộp bài hoặc đăng lên.</div></li>
+            <li><div class="num">3</div><div>Nếu muốn thêm nhạc nền: <strong>Audio</strong> → tìm "ambient", "lo-fi", "corporate" → Canva có nhạc miễn phí bản quyền.</div></li>
+            <li><div class="num">4</div><div>Sau khi xuất, dùng CapCut để thêm <strong>phụ đề</strong> hoặc <strong>voiceover</strong> nếu cần.</div></li>
+        </ul>
+        <div class="music-tip">
+            🎵 <strong>Gợi ý nhạc nền trên Canva:</strong><br>
+            Tìm "Inspiring Technology" hoặc "Ambient Electronic" → chọn bài khoảng 2 phút, âm lượng kéo xuống 30–40% để không át nội dung.<br>
+            Hoặc tìm trên <strong>Pixabay.com/music</strong> — miễn phí bản quyền.
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

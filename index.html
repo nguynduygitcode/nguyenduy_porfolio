@@ -221,6 +221,34 @@
             letter-spacing: 0.3px;
         }
 
+        /* Avatar / profile photo */
+        .intro-profile {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .intro-avatar {
+            width: 200px;
+            height: 200px;
+            min-width: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #c9d6f5;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .intro-profile-text { flex: 1; min-width: 220px; }
+
+        /* Summary image of exercises */
+        .intro-summary-img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
         .meta-tag {
             display: inline-block;
             background: #f0f4f8;
@@ -667,13 +695,19 @@
             </div>
             <div class="intro-divider"></div>
             <div class="intro-card">
-                <div class="name">Xin chào! Tôi là Nguyễn Mạnh Duy</div>
-                <div class="meta">
-                    <span class="meta-tag">MSSV: 25024086</span>
-                    <span class="meta-tag">Ngành: Data Science</span>
-                    <span class="meta-tag">Trường: Đại học Công nghệ, ĐHQGHN</span>
+                <div class="intro-profile">
+                    <!-- 📸 Thay src bên dưới bằng đường dẫn ảnh của bạn, ví dụ: images/avatar.jpg -->
+                    <img class="intro-avatar" src="avatar.jpg" alt="Ảnh đại diện của Nguyễn Mạnh Duy" onerror="this.src='https://via.placeholder.com/200x200.png?text=Avatar'">
+                    <div class="intro-profile-text">
+                        <div class="name">Xin chào! Tôi là Nguyễn Mạnh Duy</div>
+                        <div class="meta">
+                            <span class="meta-tag">MSSV: 25024086</span>
+                            <span class="meta-tag">Ngành: Data Science</span>
+                            <span class="meta-tag">Trường: Đại học Công nghệ, ĐHQGHN</span>
+                        </div>
+                    </div>
                 </div>
-                <p>Tôi là sinh viên năm nhất ngành Khoa học Dữ liệu, yêu thích khám phá các con số và tìm ra ý nghĩa ẩn sau dữ liệu. Ngoài giờ học, tôi quan tâm đến công nghệ, trí tuệ nhân tạo và các xu hướng chuyển đổi số đang diễn ra trong cuộc sống hàng ngày.</p>
+                <p style="margin-top: 18px;">Tôi là sinh viên năm nhất ngành Khoa học Dữ liệu, yêu thích khám phá các con số và tìm ra ý nghĩa ẩn sau dữ liệu. Ngoài giờ học, tôi quan tâm đến công nghệ, trí tuệ nhân tạo và các xu hướng chuyển đổi số đang diễn ra trong cuộc sống hàng ngày.</p>
             </div>
         </div>
 
@@ -734,6 +768,20 @@
                     <li><span class="check">✓</span><span>Ghi lại hành trình học tập làm tài liệu tham chiếu cho tương lai, tạo nền tảng phản tư và cải tiến liên tục.</span></li>
                     <li><span class="check">✓</span><span>Thể hiện khả năng tích hợp đa công cụ AI (Gemini, Dreamina, Canva) vào quy trình tạo ra sản phẩm chuyên nghiệp.</span></li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- Tóm tắt các bài tập -->
+        <div class="intro-section">
+            <div class="intro-section-label">
+                <span class="icon">🎬</span>
+                <h2>Demo Portfolio</h2>
+            </div>
+            <div class="intro-divider"></div>
+            <div class="intro-card">
+                <video controls autoplay muted loop style="width:100%; border-radius:12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); display:block;">
+                    <source src="demo_video.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
 
@@ -2068,17 +2116,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Closing quote -->
-        <div class="closing-quote">
-            <blockquote>
-                "Công nghệ không phải là đích đến — đó là con đường.<br>
-                Điều quan trọng không phải là bạn dùng AI giỏi đến đâu,<br>
-                mà là bạn trở thành con người như thế nào khi có AI bên cạnh."
-            </blockquote>
-            <div class="author">— Nguyễn Mạnh Duy · Portfolio Học Tập 2025–2026 —</div>
-            <div class="rating-badge">🏆 Hoàn thành đầy đủ · Đạt Mức 4 Rubric</div>
         </div>
 
     </div>

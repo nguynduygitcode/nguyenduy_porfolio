@@ -1,0 +1,78 @@
+<svg viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="50%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="cardgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" rx="20" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="800" letter-spacing="4">TÓM TẮT 6 BÀI TẬP THỰC HÀNH</text>
+  <text x="600" y="90" text-anchor="middle" fill="#9aa7c7" font-size="14" letter-spacing="2">PORTFOLIO HỌC TẬP · HỌC KỲ 2 · 2025–2026</text>
+
+  <!-- divider -->
+  <rect x="500" y="108" width="200" height="3" rx="1.5" fill="url(#cardgrad)"/>
+
+  <!-- Bài 1 -->
+  <g>
+    <rect x="50" y="140" width="1100" height="92" rx="12" fill="#ffffff" opacity="0.06"/>
+    <rect x="50" y="140" width="6" height="92" rx="3" fill="url(#cardgrad)"/>
+    <text x="78" y="180" font-size="28">🎯</text>
+    <text x="120" y="178" fill="#ffffff" font-size="16.5" font-weight="700">Bài 1: Thao tác với thư mục và tệp tin cơ bản</text>
+    <text x="120" y="204" fill="#c2cbe6" font-size="13">Mục đích: Thiết kế web chuẩn hóa, quy tắc đặt tên, quản lý phiên bản và cấu trúc tệp tin.</text>
+  </g>
+
+  <!-- Bài 2 -->
+  <g>
+    <rect x="50" y="245" width="1100" height="92" rx="12" fill="#ffffff" opacity="0.06"/>
+    <rect x="50" y="245" width="6" height="92" rx="3" fill="url(#cardgrad)"/>
+    <text x="78" y="285" font-size="28">🔍</text>
+    <text x="120" y="283" fill="#ffffff" font-size="16.5" font-weight="700">Bài 2: Tìm Kiếm &amp; Đánh Giá Thông Tin Học Thuật</text>
+    <text x="120" y="309" fill="#c2cbe6" font-size="13">Kỹ thuật tìm kiếm advanced, toán tử tìm kiếm, đánh giá độ tin cậy nguồn thông tin.</text>
+  </g>
+
+  <!-- Bài 3 -->
+  <g>
+    <rect x="50" y="350" width="1100" height="92" rx="12" fill="#ffffff" opacity="0.06"/>
+    <rect x="50" y="350" width="6" height="92" rx="3" fill="url(#cardgrad)"/>
+    <text x="78" y="390" font-size="28">🤖</text>
+    <text x="120" y="388" fill="#ffffff" font-size="16.5" font-weight="700">Bài 3: Trải Nghiệm &amp; Đánh Giá Công Cụ Trợ Lý AI</text>
+    <text x="120" y="414" fill="#c2cbe6" font-size="13">So sánh Prompt cơ bản và Prompt cải tiến; phân tích sâu cơ chế vận hành của AI.</text>
+  </g>
+
+  <!-- Bài 4 -->
+  <g>
+    <rect x="50" y="455" width="1100" height="92" rx="12" fill="#ffffff" opacity="0.06"/>
+    <rect x="50" y="455" width="6" height="92" rx="3" fill="url(#cardgrad)"/>
+    <text x="78" y="495" font-size="28">🚀</text>
+    <text x="120" y="488" fill="#ffffff" font-size="16.5" font-weight="700">Bài 4: Thiết Kế Quy Trình Hợp Tác Trực Tuyến</text>
+    <text x="120" y="510" fill="#ffffff" font-size="16.5" font-weight="700">Nâng Cao &amp; Tối Ưu Hiệu Suất Nhóm</text>
+    <text x="120" y="535" fill="#c2cbe6" font-size="13">Hệ sinh thái 5 công cụ số, giải pháp xóa bỏ điểm nghẽn và tối ưu hóa hiệu suất làm việc.</text>
+  </g>
+
+  <!-- Bài 5 -->
+  <g>
+    <rect x="50" y="570" width="1100" height="92" rx="12" fill="#ffffff" opacity="0.06"/>
+    <rect x="50" y="570" width="6" height="92" rx="3" fill="url(#cardgrad)"/>
+    <text x="78" y="610" font-size="28">🤖</text>
+    <text x="120" y="603" fill="#ffffff" font-size="16.5" font-weight="700">Bài 5: Quy Trình Sáng Tạo Nội Dung Số Đa Phương</text>
+    <text x="120" y="625" fill="#ffffff" font-size="16.5" font-weight="700">Tiện Tích Hợp Hệ Thống Công Cụ AI Nâng Cao</text>
+    <text x="120" y="650" fill="#c2cbe6" font-size="13">Sản xuất nội dung truyền thông chuyên nghiệp kết hợp Gemini AI, Dreamina AI và Canva AI.</text>
+  </g>
+
+  <!-- Bài 6 -->
+  <g>
+    <rect x="50" y="685" width="1100" height="60" rx="12" fill="#ffffff" opacity="0.06"/>
+    <rect x="50" y="685" width="6" height="60" rx="3" fill="url(#cardgrad)"/>
+    <text x="78" y="718" font-size="28">🚀</text>
+    <text x="120" y="712" fill="#ffffff" font-size="15" font-weight="700">Bài 6: Xây Dựng Khung Nguyên Tắc Sử Dụng AI Có Trách Nhiệm Và Đạo Đức Trong Môi Trường Học Thuật</text>
+    <text x="120" y="734" fill="#c2cbe6" font-size="12.5">Chính sách AI, ranh giới học thuật, trích dẫn chuẩn APA 7th và Bộ 7 nguyên tắc cốt lõi.</text>
+  </g>
+</svg>
